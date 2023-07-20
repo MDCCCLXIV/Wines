@@ -6,7 +6,7 @@ import Products from '../components/Products'
 
 const Home = () => {
   return (
-    <div className='w-full text-sm outline outline-red-500 flex flex-col'>
+    <div className='w-full text-sm  flex flex-col'>
         <Header />
         <Navigation />
         <Hero />
