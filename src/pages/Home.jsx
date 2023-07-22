@@ -4,6 +4,8 @@ import Hero from '../components/Hero'
 import Navigation from '../components/Navigation'
 import Products from '../components/Products'
 import Footer from '../components/Footer'
+import Newsletter from '../components/Newsletter'
+import Footers from '../components/Footers'
 
 const Home = () => {
   return (
@@ -12,7 +14,8 @@ const Home = () => {
         <Navigation />
         <Hero />
         <Products />
-        <Footer />
+        <Newsletter />
+        <Footers />
 
     </div> 
   )
