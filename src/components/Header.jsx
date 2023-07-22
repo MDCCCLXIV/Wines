@@ -14,7 +14,7 @@ const Header = () => {
         </div>
         <div className='flex justify-between'>
            <Userbtn />
-            <Shoppingcart />
+            <Shoppingcart itemCount={0}/>
         </div>
 
       </div>

@@ -16,8 +16,8 @@ const Contact = () => {
             <div className="flex flex-col">
             <span className='font-bold text-base text-red-500 pt-2 '>Get webwines</span>
             <div className="flex ">
-                <img className='w-[100px] h-[50px] m-1' src="appstore.png" alt="" />
-                <img className='w-[100px] h-[50px] m-1' src="googleplay.png" alt="" />
+                <img className='w-[120px] h-[50px] m-1' src="appstore.png" alt="" />
+                <img className='w-[120px] h-[50px] m-1' src="googleplay.png" alt="" />
             </div>
             </div>    
         </div>    
