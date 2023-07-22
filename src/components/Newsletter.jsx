@@ -9,8 +9,8 @@ const Newsletter = () => {
                     <span className='text-white font-bold text-3xl text-center w-full mt-auto ' >Subscribe to our newsletters</span>
                         <p className='mx-auto my-2'>Subscribe to get notified on our latest products and offers</p>
                     <div className="flex w-[80%] justify-center px-4  mb-auto mx-auto mt-2">
-                    <input className='border w-[80%] text-center p-3  rounded-full outline-red-500' type='email' placeholder='email address'></input>   
-                    <button type='submit' className=' mx-2 rounded-full w-[20%] p-2 bg-red-400 text-white hover:bg-red-700'>Submit</button>
+                    <input className='border w-[80%] text-center p-3  rounded-full text-black outline-red-500' type='email' placeholder='email address'></input>   
+                    <button type='submit' className=' mx-2 rounded-full w-[20%] p-2 bg-red-400 text-base text-white hover:bg-red-700'>Submit</button>
                 </div> 
                 </div>
             </div>

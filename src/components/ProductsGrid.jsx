@@ -34,7 +34,7 @@ const ProductsGrid = () => {
     <div className="w-full  flex flex-col">
         <div className='w-[80%] container max-w-6xl mx-auto p-2 flex justify-between'>
           <span className='font-bold text-2xl my-auto'>Best sellers</span>
-          <a className='text-red-500 text-xl my-auto'href="#">View more</a>
+          <button className='rounded-full w-[120px] p-2 bg-red-500 text-base text-white hover:bg-red-700'>View more</button>
         </div>
 
       <div className="flex w-full h-[75%]">
