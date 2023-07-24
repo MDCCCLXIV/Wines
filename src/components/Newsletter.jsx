@@ -16,7 +16,6 @@ const Newsletter = () => {
             </div>
 
         </div>
-helllo world
     </div>
   )
 }
