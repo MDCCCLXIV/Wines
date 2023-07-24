@@ -5,6 +5,7 @@ import Navigation from '../components/Navigation'
 import Products from '../components/Products'
 import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
+import Brands from '../components/Brands'
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
         <Header />
         <Navigation />
         <Hero />
+        <Brands />
         <Products />
         <Newsletter />
         <Footer />

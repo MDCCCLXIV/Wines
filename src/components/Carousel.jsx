@@ -49,7 +49,7 @@ const Carousel = () => {
             <div className="flex flex-col w-full h-full  bg-black bg-opacity-20 ">
             <div className="flex justify-between m-3">
             <span className='text-red-500 flex' ><AiOutlineStar className='' size={20}/><AiOutlineStar size={20}/><AiOutlineStar size={20}/></span>
-            <span className=" bg-red-500 text-white text-sm p-2 text-center rounded-lg w-[100px] right-0 m-1">featured</span>
+            <span className="bg-red-500 text-white text-sm p-2 text-center rounded-lg w-[100px] right-0 m-1 ">featured</span>
             </div>
             
             </div>

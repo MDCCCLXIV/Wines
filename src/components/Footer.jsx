@@ -4,7 +4,7 @@ import { BsCash, BsCreditCard, BsFacebook, BsInstagram, BsMailbox, BsMessenger, 
 const Footer = () => {
   return (
     <div className='w-full h-[55vh] mt-1 '>
-    <div className="flex container w-full h-[97%] m-auto mt-2 max-w-7xl bg-slate-200 rounded-xl ">
+    <div className="flex container w-full h-[97%] m-auto mt-2 max-w-8xl bg-slate-200 rounded-xl ">
         <div className="flex flex-col w-[37%] h-[90%] m-auto rounded-s-xl p-2"> 
         <span className="flex font-bold text-left w-full py-3 text-2xl text-red-500 p-1">Webwines</span>
             <p className='flex text-left p-1 text-base my-2'>webwines is focused on providing high quality services and products</p>
@@ -29,20 +29,21 @@ const Footer = () => {
         <div className='w-full py-3 '>
                     <span className='font-bold text-xl pt-2 '>About webwines</span>
                 <ul className='mt-2 px-1'>
-                    <li className='m-1 mt-2 hover:text-red-500'><a href='#'>About us</a></li>
-                    <li className='m-1 mt-2 hover:text-red-500'><a href='#'>Terms and conditions</a></li>
-                    <li className='m-1 mt-2 hover:text-red-500'><a href='#'>Contact us</a></li>
+                    <li className='m-1 mt-2'><a className='hover:text-red-500' href='#'>About us</a></li>
+                    <li className='m-1 mt-2'><a className='hover:text-red-500' href='#'>Terms and conditions</a></li>
+                    <li className='m-1 mt-2'><a className='hover:text-red-500' href='#'>Contact us</a></li>
                 </ul>
         </div>
         <div className='w-full py-3  '>
                     <span className='font-bold text-xl pt-2 '>Quick links</span>
                     <ul className='mt-2 px-1'>
-                    <li className='m-1 mt-2 hover:text-red-500'><a href='#'>Home</a></li>
-                    <li className='m-1 mt-2 hover:text-red-500'><a href='#'>About us</a></li>
-                    <li className='m-1 mt-2 hover:text-red-500'><a href='#'>Products</a></li>
-                    <li className='m-1 mt-2 hover:text-red-500'><a href='#'>Contact Us</a></li>
+                    <li className='m-1 mt-2'><a className='hover:text-red-500' href='#'>Home</a></li>
+                    <li className='m-1 mt-2'><a className='hover:text-red-500' href='#'>About us</a></li>
+                    <li className='m-1 mt-2'><a className='hover:text-red-500' href='#'>Products</a></li>
+                    <li className='m-1 mt-2'><a className='hover:text-red-500' href='#'>Contact Us</a></li>
                 </ul>
                     </div>
+                    
                     
 
         </div>

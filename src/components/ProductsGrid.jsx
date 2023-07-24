@@ -16,7 +16,7 @@ const ProductsGrid = () => {
   }, []);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [productPerPage] = useState(15);
+  const [productPerPage] = useState(8);
 
   // get current products
   const indexOfLastProduct = currentPage * productPerPage;
