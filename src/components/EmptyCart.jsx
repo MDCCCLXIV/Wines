@@ -26,6 +26,13 @@ const EmptyCart = () => {
       return product;
     }));
   }
+   function removeItem(productId) {
+    setProducts(prevProducts => prevProducts.filter(product => product.id !== productId));
+  }
+    const subtotal = products.reduce((total, product) => {
+    return total + (parseInt(product.price) * product.quantity);
+  }, 0);
+
 
   return (
     <div className='w-full container flex flex-col mx-auto h-[60vh] p-2 max-w-6xl'>
@@ -38,6 +45,8 @@ const EmptyCart = () => {
         <div className="flex justify-between h-full w-full mx-auto p-2">
           <div className="flex flex-col w-[75%] h-full me-auto border rounded-md p-2 overflow-y-scroll no-scrollbar">
             {products.map(({ id, image, price, Description, product_name, quantity }) => {
+                  const totalPrice = price * quantity;
+                  
               return (
                 <div key={id} className="flex flex-col w-full h-[40%] mx-auto rounded border my-1">
                   <div className="flex justify-between p-1 w-full h-[80%]">
@@ -48,13 +57,13 @@ const EmptyCart = () => {
                       <div className="flex flex-col ms-2 my-auto">
                         <span className='m-1'>{product_name}</span>
                         <span className='m-1'>{Description}</span>
-                        <span className='m-1'>Description</span>
+                        <span className='m-1'>Price: KES {price}.00</span>
                       </div>
                     </div>
-                    <span className='font-semibold text-lg h-[20%] text-center mt-3 w-[15%]'>KES {price}</span>
+                    <span className='font-semibold text-lg h-[20%] text-center mt-3 w-[25%]'>Total KES {totalPrice}.00</span>
                   </div>
                   <div className="flex justify-between w-full h-[20%]">
-                    <button className='my-auto mx-1 text-red-500 flex p-2'><BsTrash className='mx-1' size={25} />Remove</button>
+                    <button onClick={()=>removeItem(id)} className='my-auto mx-1 text-red-500 flex p-2'><BsTrash className='mx-1' size={25} />Remove</button>
                     <div className="flex my-auto mx-3 p-2 mb-1">
                       <button onClick={() => increaseQuantity(id)} className='my-auto '><BsFilePlus size={25} /></button>
                       <span className='my-auto text-base m-2'>{quantity}</span>
@@ -71,7 +80,7 @@ const EmptyCart = () => {
             <div className="flex flex-col m-1 rounded border p-2">
               <div className="flex justify-between ">
                 <span className='font-medium'>Subtotal</span>
-                <span className='text-base font-semibold'>KES 1200</span>
+                <span className='text-base font-semibold'>KES {subtotal}</span>
               </div>
               <div className="flex justify-between">
                 <span className='font-medium'>Delivery fee</span>
