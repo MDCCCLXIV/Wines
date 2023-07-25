@@ -32,6 +32,7 @@ const EmptyCart = () => {
     const subtotal = products.reduce((total, product) => {
     return total + (parseInt(product.price) * product.quantity);
   }, 0);
+   const deliveryfee = 30;
 
 
   return (
@@ -46,6 +47,7 @@ const EmptyCart = () => {
           <div className="flex flex-col w-[75%] h-full me-auto border rounded-md p-2 overflow-y-scroll no-scrollbar">
             {products.map(({ id, image, price, Description, product_name, quantity }) => {
                   const totalPrice = price * quantity;
+                 
                   
               return (
                 <div key={id} className="flex flex-col w-full h-[40%] mx-auto rounded border my-1">
@@ -84,11 +86,11 @@ const EmptyCart = () => {
               </div>
               <div className="flex justify-between">
                 <span className='font-medium'>Delivery fee</span>
-                <span className='text-base font-semibold'>KES 30</span>
+                <span className='text-base font-semibold'>KES {deliveryfee}</span>
               </div>
             </div>
             <div className="flex flex-col m-1 ">
-              <button className='bg-red-500 w-full text-lg border rounded-lg p-2 text-white hover:bg-red-700'>Checkout KES 1230</button>
+              <button className='bg-red-500 w-full text-lg border rounded-lg p-2 text-white hover:bg-red-700'>Checkout KES {subtotal + deliveryfee}</button>
             </div>
 
           </div>
