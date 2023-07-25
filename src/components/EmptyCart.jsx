@@ -1,15 +1,94 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { BsFileMinus, BsFilePlus, BsTrash } from 'react-icons/bs';
 
 const EmptyCart = () => {
+  const [products, setProducts] = useState([
+    { id: 1, product_name: "whisky", Description: '750ml whisky bottle', price: '1200', image: "best-whisky.webp", quantity: 1 },
+    { id: 2, product_name: "whisky", Description: '750ml whisky bottle', price: '1000', image: "2.jpeg", quantity: 1 },
+    { id: 3, product_name: "whisky", Description: '750ml whisky bottle', price: '700', image: "best-whisky.webp", quantity: 1 },
+    { id: 4, product_name: "whisky", Description: '750ml whisky bottle', price: '550', image: "best-whisky.webp", quantity: 1 }
+  ]);
+
+  function increaseQuantity(productId) {
+    setProducts(prevProducts => prevProducts.map(product => {
+      if (product.id === productId) {
+        return { ...product, quantity: product.quantity + 1 };
+      }
+      return product;
+    }));
+  }
+
+  function decreaseQuantity(productId) {
+    setProducts(prevProducts => prevProducts.map(product => {
+      if (product.id === productId && product.quantity > 1) {
+        return { ...product, quantity: product.quantity - 1 };
+      }
+      return product;
+    }));
+  }
+
   return (
     <div className='w-full container flex flex-col mx-auto h-[60vh] p-2 max-w-6xl'>
+      {products.length === 0 ?
         <div className="flex flex-col w-full h-full m-auto justify-center items-center ">
-        <span className='text-red-500 font-semibold text-3xl text-center  m-2'>Your cart is empty</span>
-         <button className='bg-red-500 w-[200px]  text-2xl border rounded-full m-2 p-2 text-white  hover:bg-red-700'>Get Liquor</button>
+          <span className='text-red-500 font-semibold text-3xl text-center m-2'>Your cart is empty</span>
+          <button className='bg-red-500 w-[200px] text-2xl border rounded-full m-2 p-2 text-white hover:bg-red-700'>Get Liquor</button>
         </div>
-     
+        :
+        <div className="flex justify-between h-full w-full mx-auto p-2">
+          <div className="flex flex-col w-[75%] h-full me-auto border rounded-md p-2 overflow-y-scroll no-scrollbar">
+            {products.map(({ id, image, price, Description, product_name, quantity }) => {
+              return (
+                <div key={id} className="flex flex-col w-full h-[40%] mx-auto rounded border my-1">
+                  <div className="flex justify-between p-1 w-full h-[80%]">
+                    <div className="flex h-full w-[80%] p-1">
+                      <div className="w-[120px] h-full border rounded">
+                        <img className='w-full h-full border rounded object-fill' src={image} alt="" />
+                      </div>
+                      <div className="flex flex-col ms-2 my-auto">
+                        <span className='m-1'>{product_name}</span>
+                        <span className='m-1'>{Description}</span>
+                        <span className='m-1'>Description</span>
+                      </div>
+                    </div>
+                    <span className='font-semibold text-lg h-[20%] text-center mt-3 w-[15%]'>KES {price}</span>
+                  </div>
+                  <div className="flex justify-between w-full h-[20%]">
+                    <button className='my-auto mx-1 text-red-500 flex p-2'><BsTrash className='mx-1' size={25} />Remove</button>
+                    <div className="flex my-auto mx-3 p-2 mb-1">
+                      <button onClick={() => increaseQuantity(id)} className='my-auto '><BsFilePlus size={25} /></button>
+                      <span className='my-auto text-base m-2'>{quantity}</span>
+                      <button onClick={() => decreaseQuantity(id)} className='my-auto'><BsFileMinus size={25} /></button>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+
+          </div>
+          <div className="flex flex-col w-[23%] h-[60%] border rounded-md  ">
+            <span className='text-sm font-medium border-b rounded m-1 border p-2'>CART SUMMARY</span>
+            <div className="flex flex-col m-1 rounded border p-2">
+              <div className="flex justify-between ">
+                <span className='font-medium'>Subtotal</span>
+                <span className='text-base font-semibold'>KES 1200</span>
+              </div>
+              <div className="flex justify-between">
+                <span className='font-medium'>Delivery fee</span>
+                <span className='text-base font-semibold'>KES 30</span>
+              </div>
+            </div>
+            <div className="flex flex-col m-1 ">
+              <button className='bg-red-500 w-full text-lg border rounded-lg p-2 text-white hover:bg-red-700'>Checkout KES 1230</button>
+            </div>
+
+          </div>
+
+        </div>
+
+      }
     </div>
   )
 }
 
-export default EmptyCart
+export default EmptyCart;

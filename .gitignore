@@ -10,4 +10,4 @@ package.json
 README.md
 tailwind.config.js
 yarn.lock
-node_modules
+/node_modules
