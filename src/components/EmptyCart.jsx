@@ -90,7 +90,7 @@ const EmptyCart = () => {
               </div>
             </div>
             <div className="flex flex-col m-1 ">
-              <button className='bg-red-500 w-full text-lg border rounded-lg p-2 text-white hover:bg-red-700'>Checkout KES {subtotal + deliveryfee}</button>
+              <button className='bg-red-500 w-full text-lg border rounded-lg p-2 text-white hover:bg-red-700'>Checkout KES {subtotal + deliveryfee}.00</button>
             </div>
 
           </div>
