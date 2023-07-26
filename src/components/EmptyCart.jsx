@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { BsFileMinus, BsFilePlus, BsTrash } from 'react-icons/bs';
 import { useContext } from 'react'
 import { AppContext } from '../App'

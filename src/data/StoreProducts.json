@@ -1,0 +1,58 @@
+[
+    {
+        "name":"Kibao",
+        "image":"2.jpeg",
+        "alcohol_content":40,
+        "Description":"750ml whisky bottle",
+        "price":1200
+    },
+    {
+        "name":"Best",
+        "image":"3.jpeg",
+        "alcohol_content":40,
+        "Description":"750ml whisky bottle",
+        "price":1000
+    },
+    {
+        "name":"Konyagi",
+        "image":"best-whisky.webp",
+        "alcohol_content":40,
+        "Description":"750ml whisky bottle",
+        "price":750
+    },
+    {
+        "name":"Jack daniels",
+        "image":"2.jpeg",
+        "alcohol_content":40,
+        "Description":"750ml whisky bottle",
+        "price":1000
+    },
+    {
+        "name":"County",
+        "image":"3.jpeg",
+        "alcohol_content":40,
+        "Description":"750ml whisky bottle",
+        "price":500
+    },
+    {
+        "name":"whisky",
+        "image":"2.jpeg",
+        "alcohol_content":40,
+        "Description":"750ml whisky bottle",
+        "price":1000
+    },
+    {
+        "name":"whisky",
+        "image":"2.jpeg",
+        "alcohol_content":40,
+        "Description":"750ml whisky bottle",
+        "price":600
+    },
+    {
+        "name":"whisky",
+        "image":"2.jpeg",
+        "alcohol_content":40,
+        "Description":"750ml whisky bottle",
+        "price":1200
+    }
+]
