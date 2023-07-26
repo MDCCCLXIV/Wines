@@ -2,11 +2,11 @@ import React from 'react'
 
 import EmptyCart from '../components/EmptyCart'
 
-const Cart = () => {
+const Cart = ({products,setProducts}) => {
   return (
     <div className='w-full text-sm  flex flex-col'>
    
-     <EmptyCart/>
+     <EmptyCart products={products} setProducts={setProducts}/>
 
     </div>
   )

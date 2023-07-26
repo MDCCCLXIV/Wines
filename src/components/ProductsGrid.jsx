@@ -4,7 +4,7 @@ import Product from './Product';
 const ProductsGrid = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("https://sipshop.herokuapp.com/products-list/")
+    fetch("https://webwines-389de0eff6d3.herokuapp.com/api/products-list")
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
@@ -16,7 +16,7 @@ const ProductsGrid = () => {
   }, []);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [productPerPage] = useState(8);
+  const [productPerPage] = useState(4);
 
   // get current products
   const indexOfLastProduct = currentPage * productPerPage;
@@ -40,9 +40,9 @@ const ProductsGrid = () => {
       <div className="flex w-full h-[75%]">
         <Product
           products={currentProducts}
-          product_name={currentProducts.product_name}
+          name={currentProducts.name}
           price={currentProducts.price}
-          alcohol_content={currentProducts.alcohol_content}
+          abv={currentProducts.abv}
           image={currentProducts.image}
         />
       </div>

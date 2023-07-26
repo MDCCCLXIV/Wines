@@ -1,0 +1,6 @@
+[
+    { "id": 1, "product_name": "whisky", "Description": "750ml whisky bottle", "price": 1200, "image": "best-whisky.webp", "quantity": 1 },
+    { "id": 2, "product_name": "whisky", "Description": "750ml whisky bottle", "price": 1000, "image": "2.jpeg", "quantity": 1 },
+    { "id": 3, "product_name": "whisky", "Description": "750ml whisky bottle", "price": 700, "image": "best-whisky.webp", "quantity": 1 },
+    { "id": 4, "product_name": "whisky", "Description": "750ml whisky bottle", "price": 550, "image": "best-whisky.webp", "quantity": 1 }
+  ]

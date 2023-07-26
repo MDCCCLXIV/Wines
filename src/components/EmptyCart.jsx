@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import { BsFileMinus, BsFilePlus, BsTrash } from 'react-icons/bs';
+import { useContext } from 'react'
+import { AppContext } from '../App'
 
 const EmptyCart = () => {
-  const [products, setProducts] = useState([
-    { id: 1, product_name: "whisky", Description: '750ml whisky bottle', price: '1200', image: "best-whisky.webp", quantity: 1 },
-    { id: 2, product_name: "whisky", Description: '750ml whisky bottle', price: '1000', image: "2.jpeg", quantity: 1 },
-    { id: 3, product_name: "whisky", Description: '750ml whisky bottle', price: '700', image: "best-whisky.webp", quantity: 1 },
-    { id: 4, product_name: "whisky", Description: '750ml whisky bottle', price: '550', image: "best-whisky.webp", quantity: 1 }
-  ]);
-
+  
+  const {products,setProducts} =useContext(AppContext)
   function increaseQuantity(productId) {
     setProducts(prevProducts => prevProducts.map(product => {
       if (product.id === productId) {
@@ -90,7 +87,7 @@ const EmptyCart = () => {
               </div>
             </div>
             <div className="flex flex-col m-1 ">
-              <button className='bg-red-500 w-full text-lg border rounded-lg p-2 text-white hover:bg-red-700'>Checkout KES {subtotal + deliveryfee}.00</button>
+              <button className='bg-red-500 w-full text-lg border rounded-lg p-2 text-white hover:bg-red-700'>Checkout KES {subtotal + deliveryfee}.o</button>
             </div>
 
           </div>
