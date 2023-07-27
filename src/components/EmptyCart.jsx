@@ -1,11 +1,13 @@
 import { BsFileMinus, BsFilePlus, BsTrash } from 'react-icons/bs';
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { AppContext } from '../App'
 import { Link } from 'react-router-dom';
 
 const EmptyCart = () => {
   
   const {products,setProducts} =useContext(AppContext)
+
+
   function increaseQuantity(productId) {
     setProducts(prevProducts => prevProducts.map(product => {
       if (product.id === productId) {
@@ -87,7 +89,7 @@ const EmptyCart = () => {
               </div>
             </div>
             <div className="flex flex-col m-1 ">
-              <button className='bg-red-500 w-full text-lg border rounded-lg p-2 text-white hover:bg-red-700'>Checkout KES {subtotal + deliveryfee}.o</button>
+              <button className='bg-red-500 w-full text-lg border rounded-lg p-2 text-white hover:bg-red-700'>Checkout KES {subtotal + deliveryfee}.00</button>
             </div>
 
           </div>
