@@ -7,19 +7,28 @@ import Navigation from './components/Navigation'
 import Newsletter from './components/Newsletter'
 import Footer from './components/Footer'
 import {BrowserRouter as Router,Route,Routes} from 'react-router-dom'
-import { useState ,createContext} from 'react';
-import Products from '../src/data/products.json'
-import ShopProducts from '../src/data/StoreProducts.json'
+import { useState ,createContext, useEffect} from 'react';
+// import Products from '../src/data/products.json'
+// import ShopProducts from '../src/data/StoreProducts.json'
 import Shop from './pages/Shop';
+import { fetchCartData } from './api/apis';
+import { fetchProducts } from './api/apis';
 
 export const AppContext = createContext();
 
 function App() {
-  const [products, setProducts] = useState(Products);
-  const [shopProducts, setShopProducts] = useState(ShopProducts);
+  const [products, setProducts] = useState([]);
+  const [shopProducts, setShopProducts] = useState([]);
+  useEffect(() => {
+    console.log("Fetching cart data...");
+    fetchCartData(setProducts);
+    fetchProducts(setShopProducts);
+  }, []);
+
+
   return (
     <div>
-      <AppContext.Provider value={{products ,setProducts,shopProducts,setShopProducts}}>
+      <AppContext.Provider value={{products ,setProducts,shopProducts,setShopProducts, fetchCartData}}>
         <Router>
         <Header />
         <Navigation />

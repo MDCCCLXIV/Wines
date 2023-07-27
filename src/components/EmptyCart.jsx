@@ -3,11 +3,12 @@ import { useContext, useEffect } from 'react'
 import { AppContext } from '../App'
 import { Link } from 'react-router-dom';
 
+import { handleDeleteFromBasket } from '../api/apis';
+
 const EmptyCart = () => {
   
   const {products,setProducts} =useContext(AppContext)
-
-
+  
   function increaseQuantity(productId) {
     setProducts(prevProducts => prevProducts.map(product => {
       if (product.id === productId) {
@@ -44,7 +45,7 @@ const EmptyCart = () => {
         :
         <div className="flex justify-between h-full w-full mx-auto p-2">
           <div className="flex flex-col w-[75%] h-full me-auto border rounded-md p-2 overflow-y-scroll no-scrollbar">
-            {products.map(({ id, image, price, Description, product_name, quantity }) => {
+            {products.map(({ id, image, price, Description, product_name, quantity=1 }) => {
                   const totalPrice = price * quantity;
                  
                   
@@ -64,7 +65,7 @@ const EmptyCart = () => {
                     <span className='font-semibold text-lg h-[20%] text-center mt-3 w-[25%]'>Total KES {totalPrice}.00</span>
                   </div>
                   <div className="flex justify-between w-full h-[20%]">
-                    <button onClick={()=>removeItem(id)} className='my-auto mx-1 text-red-500 flex p-2'><BsTrash className='mx-1' size={25} />Remove</button>
+                    <button onClick={()=>handleDeleteFromBasket(id, setProducts)} className='my-auto mx-1 text-red-500 flex p-2'><BsTrash className='mx-1' size={25} />Remove</button>
                     <div className="flex my-auto mx-3 p-2 mb-1">
                       <button onClick={() => increaseQuantity(id)} className='my-auto '><BsFilePlus size={25} /></button>
                       <span className='my-auto text-base m-2'>{quantity}</span>

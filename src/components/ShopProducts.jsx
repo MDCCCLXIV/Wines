@@ -1,7 +1,8 @@
-import React, { useContext, useState } from 'react';
-import { AppContext } from '../App';
-import { BsCartPlus } from 'react-icons/bs';
-import Pagination from './Pagination';
+import React, { Component, useContext, useState } from "react";
+import { AppContext } from "../App";
+import { BsCartPlus } from "react-icons/bs";
+import Pagination from "./Pagination";
+import { handleAddToBasket } from "../api/apis";
 
 const ShopProducts = () => {
   const { shopProducts, products, setProducts } = useContext(AppContext);
@@ -17,14 +18,6 @@ const ShopProducts = () => {
 
   const setPage = (pageNumbers) => {
     setCurrentPage(pageNumbers);
-  };
-
-  const pushToProducts = (product) => {
-    const productExists = products.some((p) => p.id === product.id);
-
-    if (!productExists) {
-      setProducts((prevProducts) => [...prevProducts, product]);
-    }
   };
 
   // Maintain a separate state for each product item
@@ -47,40 +40,77 @@ const ShopProducts = () => {
   };
 
   return (
-    <div className='w-[78%] h-[80vh] flex flex-col '>
+    <div className="w-[78%] h-[80vh] flex flex-col ">
       <div className="grid grid-cols-4 w-full h-[90%] grid-rows-2 gap-1 p-2">
-        {currentProducts.map(({ name, price, alcohol_content, image, Description, id, quantity }, index) => {
-          return (
-            <div
-              key={id}
-              className='flex flex-col container  p-2 bg-white hover:cursor-pointer border rounded m-1 align-middle hover:border-red-500 text-sm'
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={() => handleMouseLeave(index)}
-            >
-              <div className='w-full h-[65%] flex bg-contain bg-no-repeat bg-center' style={{ backgroundImage: `url(${image})` }}>
-                <span className='ms-auto'>abv {alcohol_content}%</span>
-              </div>
-              <div className="flex h-[35%] flex-col p-1">
-                <div className='flex w-full justify-between text-sm '>
-                  <span>{name} - {Description}</span>
-                </div>
-                <div className='flex flex-col w-full justify-evenly text-sm'>
-                  <span className='text-sm'>ratings</span>
-                  <span className='mx-auto font-medium'>KES {price}.00</span>
-                </div>
-                <button
-                  className={`w-full ${isButtonVisible[index] ? 'block' : 'hidden'} bg-red-500 p-2 m-auto hover:text-white rounded-md text-sm`}
-                  onClick={() =>
-                    pushToProducts({ name, price, alcohol_content, image, Description, id, quantity })
-                  }
+        {currentProducts.map(
+          (
+            {
+              product_name,
+              price,
+              alcohol_content,
+              image,
+              Description,
+              id,
+              quantity,
+            },
+            index
+          ) => {
+            return (
+              <div
+                key={id}
+                className="flex flex-col container  p-2 bg-white hover:cursor-pointer border rounded m-1 align-middle hover:border-red-500 text-sm"
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={() => handleMouseLeave(index)}
+              >
+                <div
+                  className="w-full h-[65%] flex bg-contain bg-no-repeat bg-center"
+                  style={{ backgroundImage: `url(${image})` }}
                 >
-                  <BsCartPlus className='m-auto' size={22} />
-                </button>
+                  <span className="ms-auto">abv {alcohol_content}%</span>
+                </div>
+                <div className="flex h-[35%] flex-col p-1">
+                  <div className="flex w-full justify-between text-sm ">
+                    <span>
+                      {product_name} - {Description}
+                    </span>
+                  </div>
+                  <div className="flex flex-col w-full justify-evenly text-sm">
+                    <span className="text-sm">ratings</span>
+                    <span className="mx-auto font-medium">KES {price}.00</span>
+                  </div>
+                  <button
+                    className={`w-full ${
+                      isButtonVisible[index] ? "block" : "hidden"
+                    } bg-red-500 p-2 m-auto hover:text-white rounded-md text-sm`}
+                    onClick={() => {
+                      const productExists = products.find((p) => p.id === id);
+                      if (productExists) {
+                        alert("Product is already in the cart.");
+                        return;
+                      }
+                      handleAddToBasket(
+                        {
+                          product_name,
+                          price,
+                          alcohol_content,
+                          image,
+                          Description,
+                          id,
+                          quantity,
+                        },
+                        setProducts
+                      );
+                    }}
+                  >
+                    <BsCartPlus className="m-auto" size={22} />
+                  </button>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          }
+        )}
       </div>
+
       <div className="w-full flex mx-auto container p-1 m-1">
         <Pagination
           productPerPage={productPerPage}
