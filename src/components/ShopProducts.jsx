@@ -47,7 +47,7 @@ const ShopProducts = () => {
             </div>
             <div className='flex flex-col w-full justify-evenly text-sm'>
                <span className='text-sm'>ratings</span>
-            <span className='mx-auto font-medium'>KES {price}</span>
+            <span className='mx-auto font-medium'>KES {price}.00</span>
             </div>
                 <button
                 className='w-full bg-red-500 p-2 m-auto hover:text-white rounded-md text-sm'
