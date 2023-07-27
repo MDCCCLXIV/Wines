@@ -15,7 +15,7 @@ const ProductsGrid = () => {
       });
   }, []);
 
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage] = useState(1);
   const [productPerPage] = useState(4);
 
   // get current products
@@ -26,10 +26,7 @@ const ProductsGrid = () => {
     indexOfLastProduct
   );
 
-  const setPage = (pageNumbers) => {
-    setCurrentPage(pageNumbers);
-  };
-
+  
   return (
     <div className="w-full  flex flex-col">
         <div className='w-[80%] container max-w-6xl mx-auto p-2 flex justify-between'>

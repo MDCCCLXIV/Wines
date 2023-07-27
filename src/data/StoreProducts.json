@@ -1,58 +1,102 @@
 [
     {
         "name":"Kibao",
+        "id":1,
         "image":"2.jpeg",
         "alcohol_content":40,
         "Description":"750ml whisky bottle",
-        "price":1200
+        "price":1200,
+        "quantity":1
     },
     {
         "name":"Best",
+         "id":2,
         "image":"3.jpeg",
         "alcohol_content":40,
         "Description":"750ml whisky bottle",
-        "price":1000
+        "price":1000,
+        "quantity":1
     },
     {
         "name":"Konyagi",
+         "id":3,
         "image":"best-whisky.webp",
         "alcohol_content":40,
         "Description":"750ml whisky bottle",
-        "price":750
+        "price":750,
+          "quantity":1
     },
     {
         "name":"Jack daniels",
+         "id":4,
         "image":"2.jpeg",
         "alcohol_content":40,
         "Description":"750ml whisky bottle",
-        "price":1000
+        "price":1000,
+          "quantity":1
     },
     {
         "name":"County",
+         "id":5,
         "image":"3.jpeg",
         "alcohol_content":40,
         "Description":"750ml whisky bottle",
-        "price":500
+        "price":500,
+          "quantity":1
     },
     {
         "name":"whisky",
+         "id":6,
         "image":"2.jpeg",
         "alcohol_content":40,
         "Description":"750ml whisky bottle",
-        "price":1000
+        "price":1000,
+      "quantity":1
     },
     {
         "name":"whisky",
+         "id":7,
         "image":"2.jpeg",
         "alcohol_content":40,
         "Description":"750ml whisky bottle",
-        "price":600
+        "price":600,
+          "quantity":1
     },
     {
         "name":"whisky",
+         "id":8,
         "image":"2.jpeg",
         "alcohol_content":40,
         "Description":"750ml whisky bottle",
-        "price":1200
+        "price":1200,
+          "quantity":1
+    },
+     {
+        "name":"Kibao",
+         "id":9,
+        "image":"2.jpeg",
+        "alcohol_content":40,
+        "Description":"750ml whisky bottle",
+        "price":1200,
+          "quantity":1
+    },
+    {
+        "name":"Best",
+         "id":10,
+        "image":"3.jpeg",
+        "alcohol_content":40,
+        "Description":"750ml whisky bottle",
+        "price":1000,
+          "quantity":1
+    },
+    {
+        "name":"Konyagi",
+         "id":11,
+        "image":"best-whisky.webp",
+        "alcohol_content":40,
+        "Description":"750ml whisky bottle",
+        "price":750,
+          "quantity":1
+
     }
 ]

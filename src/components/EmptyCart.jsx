@@ -1,6 +1,7 @@
 import { BsFileMinus, BsFilePlus, BsTrash } from 'react-icons/bs';
 import { useContext } from 'react'
 import { AppContext } from '../App'
+import { Link } from 'react-router-dom';
 
 const EmptyCart = () => {
   
@@ -36,7 +37,7 @@ const EmptyCart = () => {
       {products.length === 0 ?
         <div className="flex flex-col w-full h-full m-auto justify-center items-center ">
           <span className='text-red-500 font-semibold text-3xl text-center m-2'>Your cart is empty</span>
-          <button className='bg-red-500 w-[200px] text-2xl border rounded-full m-2 p-2 text-white hover:bg-red-700'>Get Liquor</button>
+          <Link to="/products" className='bg-red-500 w-[200px] text-2xl border rounded-full m-2 p-2 text-white hover:bg-red-700 text-center'>Get Liquor</Link>
         </div>
         :
         <div className="flex justify-between h-full w-full mx-auto p-2">

@@ -11,7 +11,7 @@ const Pagination = ({productPerPage,totalProducts,setPage}) => {
             {
                 pageNumbers.map((number)=>{
                     return(
-                        <li className='flex p-2 border m-1'><a onClick={()=>setPage(number)} href="#">{number}</a></li>
+                        <li key={number} className='flex border  text-base mx-1'><a className="p-2 mx-1" onClick={()=>setPage(number)} href="#">{number}</a></li>
                     )
                 })
             }
