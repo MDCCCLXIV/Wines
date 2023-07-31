@@ -45,9 +45,9 @@ const ShopProducts = () => {
         {currentProducts.map(
           (
             {
-              product_name,
+              name,
               price,
-              alcohol_content,
+              abv,
               image,
               Description,
               id,
@@ -66,12 +66,12 @@ const ShopProducts = () => {
                   className="w-full h-[65%] flex bg-contain bg-no-repeat bg-center"
                   style={{ backgroundImage: `url(${image})` }}
                 >
-                  <span className="ms-auto">abv {alcohol_content}%</span>
+                  <span className="ms-auto">abv {abv}%</span>
                 </div>
                 <div className="flex h-[35%] flex-col p-1">
                   <div className="flex w-full justify-between text-sm ">
                     <span>
-                      {product_name} - {Description}
+                      {name} - {Description}
                     </span>
                   </div>
                   <div className="flex flex-col w-full justify-evenly text-sm">
@@ -90,9 +90,9 @@ const ShopProducts = () => {
                       }
                       handleAddToBasket(
                         {
-                          product_name,
+                          name,
                           price,
-                          alcohol_content,
+                          abv,
                           image,
                           Description,
                           id,
